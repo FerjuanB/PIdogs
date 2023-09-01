@@ -8,9 +8,9 @@ module.exports = (sequelize)=> {
     defaultValue:DataTypes.UUIDV4,
     allowNull:false,
    },
-   name:{
+   nombre:{
     type:DataTypes.STRING,
-    allowNull:false,
+    
    } 
 },{
     timestamps:false,

@@ -1,3 +1,5 @@
+const axios = require ("axios")
+const {Dog} = require("../db")
 const {findDogs} = require("../controllers/findDogsCont")
 
 
@@ -12,25 +14,17 @@ const findDogsHandler = async (req,res)=>{
     }
 
 
-  const getDogsByName = (req,res)=>{
-    const {name} = req.query
-    res.send(name)
-  }
+  
   
   //?/ //////////////////////////////////////
   
   
-  const getDogsByTemps = (req,res)=>{
-    res.send("hola wacho de nuevo")
-  }
+  
   
   
   
 
 
   module.exports = {
-    findDogsHandler,
-    getDogsByName,
-    getDogsByTemps,
-    
+    findDogsHandler
   }

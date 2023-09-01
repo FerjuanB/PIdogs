@@ -3,7 +3,6 @@ const axios = require("axios")
 const {  MY_API_K } = process.env
 
 
-
 const getDogsIdRaza= async (id,source)=>{
     
     const dog = source 
@@ -13,7 +12,16 @@ const getDogsIdRaza= async (id,source)=>{
         //include:[Temperament]
     //} 
     ) 
-    return dog;
+    // const detailDog = dog.map(d =>({
+    //     id:d.id,
+    //     nombre:d.name,
+    //     imagen:d.reference_image_id,
+    //     Altura:d.height,
+    //     Peso:d.weight,
+    //     Anios_de_vida:d.life_span,
+    //     created: false,
+    // }))
+    return dog
     } 
 
     module.exports = {getDogsIdRaza}

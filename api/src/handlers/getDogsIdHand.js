@@ -9,11 +9,12 @@ const getDogsById = async (req,res)=>{
     const {idRaza} = req.params;
    
     const source = isNaN(idRaza)? "bdd": "api";
+   
     try {
     const dog = await getDogsIdRaza (idRaza, source);
     res.status(200).json(dog)
    } catch (error) {
-    res.status(500).json({error:error.message})
+    res.status(400).json({error:error.message})
    }
   }
 

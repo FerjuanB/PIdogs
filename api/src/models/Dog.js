@@ -28,8 +28,14 @@ module.exports = (sequelize) => {
     anios_de_vida:{
       type:DataTypes.STRING,
       allowNull:false,
+    },
+    created: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
     }
+    
   },{
-    timestamps: false,
+    timestamps: false
   });
 };
