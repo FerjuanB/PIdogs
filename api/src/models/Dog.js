@@ -14,8 +14,10 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     imagen:{
+      
       type:DataTypes.STRING,
       allowNull:false,
+      
     },
     altura:{
       type:DataTypes.STRING,

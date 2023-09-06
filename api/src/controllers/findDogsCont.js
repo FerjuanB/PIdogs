@@ -2,10 +2,12 @@ const {Dog} = require("../db")
 const axios = require("axios")
 const {  MY_API_K } = process.env
 
+const imagenUrl=`https://cdn2.thedogapi.com/images/`
 
-
-const findDogs = async(req,res) =>{
+const findDogs = async() =>{
+   
     const dogs = await Dog.findAll();
+   
     const dogsApi = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${MY_API_K}`)
     const dog = dogsApi.data.map(dog => ({
         id:dog.id,
