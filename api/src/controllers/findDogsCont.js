@@ -13,8 +13,8 @@ const findDogs = async() =>{
         id:dog.id,
         nombre:dog.name,
         imagen:dog.reference_image_id,
-        Altura:dog.height,
-        Peso:dog.weight,
+        Altura:dog.height.metric,
+        Peso:dog.weight.metric,
         Anios_de_vida:dog.life_span,
         created: false,
 
