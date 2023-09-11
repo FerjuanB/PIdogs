@@ -1,12 +1,11 @@
 import style from './Dog.module.css'
-const {  MY_API_K } = process.env
 const Dog = (props)=>{
     return(
         <div className={style.card}>
             <p>
         Name:{props.nombre}
             </p>
-            <img src={`https://cdn2.thedogapi.com/images/${props.imagen}`} alt="" />
+            <img className={style.imagenD}src={`https://cdn2.thedogapi.com/images/${props.imagen}.jpg`} alt="" />
             <p>
                 Peso:{props.Peso} Kg
                 </p>  

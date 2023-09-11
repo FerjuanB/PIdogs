@@ -1,27 +1,30 @@
-import SearchBar from './SearchBar/Searchbar'
-import axios from 'axios'
-import { useState } from "react";
+import { useEffect } from "react";
 import DogsContainer from '../../components/DogsContainer/DogsContainer';
+import {useDispatch} from "react-redux"
+import {getDogs} from '../../redux/actions'
+const Home =()=>{
+const dispatch = useDispatch();
+  useEffect(()=>{
+   dispatch(getDogs()) 
+  },[dispatch])
 
-const Home =({onSearch})=>{
-    const [searchN, setSearchN] =useState([])
-  
-    async function onSearch (name) {
-      try {
-         const { data } = await axios(
-            `http://localhost:3001/dogs/name?name=${name}`
-            );
-            if (data.name) {
-               setSearchN(data.name);
-            }
-         } catch (error) {
-            window.alert(error.message);
-         }
-      }
+   //  const [searchN, setSearchN] =useState([])
+   //  async function onSearch (name) {
+   //    try {
+   //       const { data } = await axios(
+   //          `http://localhost:3001/dogs/name?name=${name}`
+   //          );
+   //          if (data.name) {
+   //             setSearchN(data.name);
+   //          }
+   //       } catch (error) {
+   //          window.alert(error.message);
+   //       }
+   //    }
   
     return(
         <div>
-<SearchBar onSearch={onSearch} />
+
 
 <DogsContainer />
         </div>
